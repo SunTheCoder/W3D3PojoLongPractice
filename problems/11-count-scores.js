@@ -7,6 +7,35 @@ and the sum of the total points for the game as their value.
 
 
 Example 1:
+***********************************************************************/
+
+
+function countScores(people) {    ////try summing objects and consolidating first
+
+    let object = {}
+    //let arr = []
+  
+        for (let obj of people) {
+          
+            if (!(obj.name in object)) {
+              object[obj.name] = obj.score
+            } else if (obj.name in object) {
+              //console.log(object[obj.name])
+              object[obj.name] = object[obj.name] + obj.score
+            }
+            //console.log(object)
+        }
+
+        // }
+           return object
+
+           ///if typeof value = string for key
+       
+}
+
+
+///for of and simply check type of keys and if it is already in index 
+
 let ppl = [{name: "Anthony", score: 10},
             {name: "Fred", score : 10},
             {name: "Anthony", score: -8},
@@ -14,7 +43,7 @@ let ppl = [{name: "Anthony", score: 10},
 
 console.log(countScores(ppl)); //=> { Anthony: 2, Fred: 10, Winnie: 12 }
 
-Example 2:
+//Example 2:
 let peeps = [
   {name: "Anthony", score: 2},
   {name: "Winnie", score: 2},
@@ -25,11 +54,6 @@ let peeps = [
   {name: "Winnie", score: 2}
 ];
 console.log(countScores(peeps)); //=> { Anthony: 4, Fred: 4, Winnie: 6 }
-***********************************************************************/
-
-function countScores(people) {
-  // Your code here 
-}
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 module.exports = countScores;

@@ -9,14 +9,32 @@ searching.
 
 
 Example:
+***********************************************************************/
+
+function appleCounter(appleObj) {
+  let count = 0
+  let appleArr = Object.entries(appleObj)
+  
+  for (let i = 0; i < appleArr.length; i++) {
+    let entries = appleArr[i][0]
+    if (entries.toLowerCase().includes('apple')) {
+      count++
+    }
+
+  }
+  return count
+
+
+}
+
 let obj = { banana: "yay!" };
-appleCounter(obj); // => 0
+console.log(appleCounter(obj)); // => 0
 
 let obj1 = { crabapple: "yum!" };
-appleCounter(obj1); // => 1
+console.log(appleCounter(obj1)); // => 1
 
 let obj2 = { crabapple: "yum!", honeyapple: "super yum", banana: "yay" };
-appleCounter(obj2); // => 2
+console.log(appleCounter(obj2)); // => 2
 
 
 let obj3 = {
@@ -25,12 +43,6 @@ let obj3 = {
   banana: "yay",
   bigapple: "NYC"
 };
-appleCounter(obj3); // => 3
-***********************************************************************/
-
-function appleCounter(appleObj) {
-  // Your code here 
-}
-
+console.log(appleCounter(obj3)); // => 3
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 module.exports = appleCounter;
